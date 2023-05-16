@@ -18,7 +18,7 @@ Nowadays, the term 'cloud computing' refers to on-demand delivery of computing s
 
 - **Security** - Cloud providers employ security measures, update security regularly and offer access and identity controls to protect the infrastructure, data and applications of the businesses that use them.
 
-- **Faster time-to-market** - Using the cloud enables businesses to deploy new applications rapidly, since virtually any size or number of machines can be taken out easily, thus reducing the time-to-mark a new product.
+- **Faster time-to-market** - Using the cloud enables businesses to deploy new applications rapidly, since virtually any size or number of machines can be taken out easily, thus reducing the time-to-market a new product.
 
 ## What is AWS?
 
