@@ -92,10 +92,15 @@ When ready, click 'Connect' to connect to the instance. Now, we can connect to t
 
     ```bash
     $ sudo apt update
+
     $ sudo apt upgrade -y
+
     $ sudo apt install nginx -y
+
     $ sudo systemctl start nginx
+
     $ sudo systemctl enable nginx
+    
     $ sudo systemctl status nginx
     ```
 
