@@ -58,7 +58,7 @@ This guide outlines how automate all of the previous steps to create a web app a
     }" | sudo tee /etc/nginx/sites-available/default
     ```
 
-5. Then the script restarts the Nginx web server using `restart` since we changed the configuration file, and `enable` tells the service to stay running even if it is rebooted, it'll know to run the service: 
+5. Then the script restarts the Nginx web server using `restart` since we changed the configuration file, and `enable` tells the service to stay running even if it is rebooted, it'll know to run the service:
 
     ```bash
     # Restart nginx web server
