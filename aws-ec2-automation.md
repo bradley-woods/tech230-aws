@@ -81,7 +81,7 @@ This guide outlines how automate all of the previous steps to create a web app a
 
     ```bash
     # Add database host IP info to .bashrc
-    echo -e "\nexport DB_HOST=mongodb://172.31.59.25:27017/posts" | sudo tee -a .bashrc
+    echo -e "\nexport DB_HOST=mongodb://<ip-address>:27017/posts" | sudo tee -a .bashrc
     source .bashrc
     ```
 
@@ -90,15 +90,14 @@ This guide outlines how automate all of the previous steps to create a web app a
     ```bash
     # Get repo with app folder
     mkdir ~/repo
-    cd ~/repo
-    git clone https://github.com/bradley-woods/tech230-aws.git
+    git clone https://github.com/bradley-woods/tech230-aws.git ~/repo
     ```
 
 9. Now we have the app folder, the script `cd` changes directory inside the app folder and installs it using the following commands:
 
     ```bash
     # Install the app
-    cd ~/repo/tech230-aws/app
+    cd ~/repo/app
     sudo npm install
     ```
 
