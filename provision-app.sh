@@ -56,12 +56,12 @@ mkdir ~/repo
 cd ~/repo
 git clone https://github.com/bradley-woods/tech230-aws.git
 
-# Install app and run the app
+# Install app the app
 cd ~/repo/tech230-aws/app
 sudo npm install
 
 # Seed the database
-# node seeds/seed.js
+node seeds/seed.js
 
 # Start the app
 pm2 start app.js --update-env

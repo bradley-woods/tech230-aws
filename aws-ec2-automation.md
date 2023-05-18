@@ -1,87 +1,10 @@
 # AWS EC2 App Deployment Automation
 
-This guide outlines how automate all of the previous steps to create a web app automatically on start-up using a provisioning script that can be copied into the 'User data' section in 'Advanced details' when creating an EC2 instance. The provisioning script should look similar to below to automate the deployment of the sample app.
+This guide outlines how automate all of the previous steps to create a web app automatically on start-up using a provisioning script that can be copied into the 'User data' section in 'Advanced details' when creating an EC2 instance. The provisioning script should look similar to the file [here](https://github.com/bradley-woods/tech230-aws/blob/main/provision-app.sh) which automates the deployment of the sample app.
 
-## App Provisioning Script
+## Instructions to a Provisioning Script
 
-```bash
-#!/bin/bash
-
-# Update and upgrade packages
-sudo apt-get update -y
-sudo apt-get upgrade -y
-
-# Install nginx web server
-sudo apt-get install nginx -y
-
-# Replace default config file
-echo "
-server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-
-    root /var/www/html;
-
-    server_name _;
-
-    location / {
-        proxy_pass http://localhost:3000;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade \$http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host \$host;
-        proxy_cache_bypass \$http_upgrade;
-    }
-
-    location /posts {
-        proxy_pass http://localhost:3000/posts;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade \$http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host \$host;
-        proxy_cache_bypass \$http_upgrade;
-    }
-}" | sudo tee /etc/nginx/sites-available/default
-
-# Restart nginx web server
-sudo systemctl restart nginx
-
-# Keep it running on reboot
-sudo systemctl enable nginx
-
-# Install app dependencies
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-sudo apt-get install nodejs -y
-sudo npm install pm2 -g
-
-# Add database host IP info to .bashrc
-echo -e "\nexport DB_HOST=mongodb://172.31.59.25:27017/posts" | sudo tee -a .bashrc
-source .bashrc
-
-# Get repo with app folder
-mkdir ~/repo
-cd ~/repo
-git clone https://github.com/bradley-woods/tech230-aws.git
-
-# Install the app
-cd ~/repo/tech230-aws/app
-sudo npm install
-
-# Seed the database
-# node seeds/seed.js
-
-# Start the app
-pm2 start app.js --update-env
-
-# If already started, restart (idempotency)
-pm2 restart app.js --update-env
-```
-
----
-
-## Instructions to create the script
-
-1. Firstly, `#!/bin/bash` is called a Shebang and tells the shell that this script should be run using the bash (Bourne Again Shell) interpreter:
+1. Firstly, create a shell script file (e.g. app-provision.sh) and enter the following line at the beginning. `#!/bin/bash` is called a Shebang and tells the shell that this script should be run using the bash (Bourne Again Shell) interpreter:
 
     ```bash
     #!/bin/bash
@@ -198,6 +121,12 @@ pm2 restart app.js --update-env
     pm2 restart app.js --update-env
     ```
 
-12. The app should now be running on the public IP address without needing to add ':3000' port number as the Nginx server has been set up as a reverse proxy.
+12. The app should now be running on the public IP address without needing to add ':3000' port number as the Nginx server has been set up as a reverse proxy:
 
-13. The next steps would be to copy and paste this into 'User data' so the sample app will be up and running when an EC2 instance is created for the first time.
+    ![Node app running](images/node-running.png)
+
+13. The script was run multiple times in the terminal using `./provision-app.sh` ensuring the correct permissions were set, and it still ran smoothly and a running app was produced at the end of it, to ensure the script was idempotent:
+
+    ![Sample app running in browser](images/aws-app-page.png)
+
+14. The next steps would be to copy and paste the provisioning script into the 'User data' section under 'Advanced details' when launching an EC2 instance, so the sample app will be up and running when it has initialised.
