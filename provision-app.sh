@@ -4,8 +4,6 @@
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
-echo "----Setting up NGINX Reverse Proxy----"
-
 # Install nginx web server
 sudo apt-get install nginx -y
 
@@ -44,27 +42,29 @@ sudo systemctl restart nginx
 # Keep it running on reboot
 sudo systemctl enable nginx
 
-echo "----Setting up NodeJS App----"
-
 # Install app dependencies
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install nodejs -y
 sudo npm install pm2 -g
 
 # Add database host IP info to .bashrc
-echo -e "\nexport DB_HOST=mongodb://1:27017/posts" | sudo tee -a .bashrc
+echo -e "\nexport DB_HOST=mongodb://172.31.59.25:27017/posts" | sudo tee -a .bashrc
 source .bashrc
 
 # Get repo with app folder
-
+mkdir ~/repo
+cd ~/repo
+git clone https://github.com/bradley-woods/tech230-aws.git
 
 # Install app and run the app
-cd ~/app
-npm install
+cd ~/repo/tech230-aws/app
+sudo npm install
 
 # Seed the database
-node seeds/seed.js
+# node seeds/seed.js
 
-# Start th app
-pm2 stop app.js
+# Start the app
 pm2 start app.js --update-env
+
+# If already started, restart (idempotency)
+pm2 restart app.js --update-env
