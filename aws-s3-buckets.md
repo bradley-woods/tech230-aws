@@ -1,10 +1,12 @@
 # AWS S3 Buckets
 
-In AWS, there is a storage service called S3 (Simple Storage Service). It enables users to store and retrieve numerous amounts of data at any time or place, with the benefit of AWS's security and durability.
+In AWS, there is a storage service called S3 (Simple Storage Service). It enables users to store and retrieve numerous amounts of data at any time or place, with the benefit of AWS's security and durability, find out more detail [here](https://www.simplilearn.com/tutorials/aws-tutorial/aws-s3).
 
 Similar to how we have interacted with EC2, you can use the AWS console which is a web user-interface, to interact with S3. However, it is often easier and faster to use the AWS CLI (Command-line interface) and ultimately automate tasks using the AWS SDK for Python (Boto3).
 
 ![AWS S3](images/aws_s3.png)
+
+---
 
 ## Performing CRUD Operations in S3 using AWS CLI
 
@@ -26,7 +28,7 @@ Similar to how we have interacted with EC2, you can use the AWS console which is
     aws s3 ls
     ```
 
-### Create Operation (**C**-R-U-D)
+Create Operation (**C**-R-U-D)
 
 - To make a new bucket, use the following command. In the example, the bucket is called 'tech230-bradley-bucket' in region 'eu-west-1' (Ireland):
 
@@ -34,7 +36,7 @@ Similar to how we have interacted with EC2, you can use the AWS console which is
     aws s3 mb s3://tech230-bradley-bucket --region eu-west-1
     ```
 
-### Read and Update Operations (C-**R**-**U**-D)
+Read and Update Operations (C-**R**-**U**-D)
 
 - To copy a file from your local directory to the S3 bucket:
 
@@ -48,7 +50,7 @@ Similar to how we have interacted with EC2, you can use the AWS console which is
     aws s3 sync s3://tech230-bradley-bucket s3_downloads
     ```
 
-### Delete Operation (C-R-U-**D**)
+Delete Operation (C-R-U-**D**)
 
 - To remove a specific file from a bucket, in this example we removed 'sampletext.txt', use the command:
 
@@ -67,6 +69,8 @@ Similar to how we have interacted with EC2, you can use the AWS console which is
     ```bash
     aws s3 rb s3://tech230-bradley-bucket
     ```
+
+---
 
 ## Automating CRUD Operations in S3 using Python
 
@@ -91,7 +95,7 @@ We can automate the above tasks using Boto3 which is the AWS SDK for Python.
         print(bucket.name)
     ```
 
-### Create Operation (**C**-R-U-D)
+Create Operation (**C**-R-U-D)
 
 - To create a bucket, we can use the following Python script, which first connects to the S3 client and then creates the bucket:
 
@@ -105,7 +109,7 @@ We can automate the above tasks using Boto3 which is the AWS SDK for Python.
     bucket_name = s3.create_bucket(Bucket="tech230-bradley-boto", CreateBucketConfiguration={"LocationConstraint": "eu-west-1"})
     ```
 
-### Read and Update Operations (C-**R**-**U**-D)
+Read and Update Operations (C-**R**-**U**-D)
 
 - To upload to a file to a bucket, we first open and read the contents of the file, then we use `put_object` to add the file (key and body) to the bucket:
 
@@ -136,7 +140,7 @@ We can automate the above tasks using Boto3 which is the AWS SDK for Python.
     s3.download_file("tech230-bradley-boto", "sampletext.txt", "sampletext1.txt")
     ```
 
-### Delete Operation (C-R-U-**D**)
+Delete Operation (C-R-U-**D**)
 
 - To delete a file which is inside an S3 bucket, use the following script, the `s3.Object` to access the file itself:
 
