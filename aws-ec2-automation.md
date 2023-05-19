@@ -98,14 +98,17 @@ This guide outlines how automate all of the previous steps to create a web serve
 
     ```bash
     curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+
     sudo apt-get install nodejs -y
+
     sudo npm install pm2 -g
     ```
 
 7. The script then adds the `DB_HOST` environment variable to the `.bashrc` configuration file so bash will keep this file persistent so the app can use it to retrieve contents from the MongoDB database:
 
     ```bash
-    echo -e "\nexport DB_HOST=mongodb://<ip-address>:27017/posts" | sudo tee -a .bashrc
+    echo -e "\nexport DB_HOST=mongodb://192.168.10.150:27017/posts" >> ~/.bashrc
+
     source .bashrc
     ```
 
@@ -119,6 +122,7 @@ This guide outlines how automate all of the previous steps to create a web serve
 
     ```bash
     cd ~/app
+
     sudo npm install
     ```
 
