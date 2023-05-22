@@ -1,6 +1,6 @@
 # AWS EC2 App Deployment Automation
 
-This guide outlines how automate all of the previous steps to create a web server running an app and a database server automatically on start-up using two provisioning scripts that can be copied into the 'User data' section in 'Advanced details' when creating an EC2 instance. The provisioning script for the web server should look similar to the file [here](https://github.com/bradley-woods/tech230-aws/blob/main/provision-app.sh) which automates the deployment of the sample app and the script to automate the database server can be found [here](https://github.com/bradley-woods/tech230-aws/blob/main/provision-db.sh).
+This guide outlines how to automate all of the previous steps to create a web server running an app and a database server automatically on start-up using two provisioning scripts that can be copied into the 'User data' section in 'Advanced details' when creating an EC2 instance. The provisioning script for the web server should look similar to the file [here](https://github.com/bradley-woods/tech230-aws/blob/main/provision-app.sh) which automates the deployment of the sample app and the script to automate the database server can be found [here](https://github.com/bradley-woods/tech230-aws/blob/main/provision-db.sh).
 
 ## Creating the Database Provisioning Script
 
