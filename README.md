@@ -14,6 +14,8 @@
 
    6. [AWS S3 Buckets](https://github.com/bradley-woods/tech230-aws/blob/main/aws-s3-buckets.md)
 
+   7. [AWS VPC](https://github.com/bradley-woods/tech230-aws/blob/main/aws-vpc.md)
+
 ## What is Cloud Computing?
 
 Cloud computing began all the way back in the 1960s where multiple users would simultaneously access a mainframe computer. This idea quickly gained traction and developments were made such as grid computing, utility computing and virtualisation; however, the main idealogy stayed the same.

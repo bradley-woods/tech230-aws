@@ -4,7 +4,7 @@ AWS VPC (Virtual Private Cloud) allows AWS resources to be launched in logically
 
 ![AWS VPC](images/aws-vpc.png)
 
-EC2 instances can be placed in a separate subnet in each AZ in a Region, using an internet gateway to allow communication between the resources and the internet, as shown above. The app instance is placed in a public subnet so the public can access it over the internet and it communicates with the database instance in a private subnet.
+EC2 instances can be placed in a separate subnet in each AZ in a Region, using an internet gateway to allow communication between the resources and the internet, as shown above. The app instance is placed in a public subnet so the public can access it over the internet and it communicates with the database instance in a private subnet. This guide outlines how to create a VPC and the necessary networking resources that are involved with deploying instances inside the VPC and connecting them to the internet.
 
 ## Creating the VPC
 
@@ -66,4 +66,4 @@ EC2 instances can be placed in a separate subnet in each AZ in a Region, using a
 
     ![AWS VPC](images/aws-create-instance-in-vpc.png)
 
-> **Note:** we need to create a new security group (SG) because existing SGs will not be compatible with the new VPC subnets. The security group must be in the same VPC as the subnet.
+    > **Note:** we need to create a new security group (SG) because existing SGs will not be compatible with the new VPC subnets. The security group must be in the same VPC as the subnet.
