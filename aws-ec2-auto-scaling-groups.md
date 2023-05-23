@@ -10,8 +10,8 @@ This guide outlines how to create an ASG for EC2 instances that run a web server
 
 Pre-requisites:
 
-- You have created a Launch Template with the necessary settings (AMI, security group etc.) to run an Nginx web server, outlined [here](https://github.com/bradley-woods/tech230-aws/blob/main/aws-ec2-templates.md)
-- Check your User data script is correct for the Launch Template, example shown [here](https://github.com/bradley-woods/tech230-aws/blob/main/aws-ec2-scripts/provision-app.sh)
+- You have created a Launch Template with the necessary settings (AMI, security group etc.) to run an Nginx web server: [aws-ec2-templates](https://github.com/bradley-woods/tech230-aws/blob/main/aws-ec2-templates.md)
+- Check your User data script is correct for the Launch Template, example shown here: [provision-app](https://github.com/bradley-woods/tech230-aws/blob/main/aws-ec2-scripts/provision-app.sh)
 
 ## Creating the Auto Scaling Group
 
