@@ -4,11 +4,14 @@ An Auto Scaling Group (ASG) is a group of EC2 instances that are automatically s
 
 ![ASG Process diagram](images/aws-asg-process.png)
 
-An ASG has two key benefits: **High Availability** and **Scalability** due to operating in multiple Availability Zones (AZs), it can launch instances in geographically separate datacentres from each other, helping to prevent outages and minimise downtime. This guide outlines how to create an ASG for EC2 instances that run a web server.
+An ASG has two key benefits: **High Availability** and **Scalability** due to operating in multiple Availability Zones (AZs), it can launch instances in geographically separate datacentres from each other, helping to prevent outages and minimise downtime.
+
+This guide outlines how to create an ASG for EC2 instances that run a web server.
 
 Pre-requisites:
 
 - You have created a Launch Template with the necessary settings (AMI, security group etc.) to run an Nginx web server, outlined here: [aws-ec2-templates](https://github.com/bradley-woods/tech230-aws/blob/main/aws-ec2-templates.md)
+- Check your User data script is correct for the Launch Template, example shown here: [provision-app](https://github.com/bradley-woods/tech230-aws/blob/main/aws-ec2-scripts/provision-app.sh)
 
 ## Creating the Auto Scaling Group
 
