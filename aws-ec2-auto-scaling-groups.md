@@ -43,7 +43,7 @@ Pre-requisites:
 
 7. This step is optional which is to add notifications such as when an instance is started up or terminated.
 
-8. The final step is to add any tags to help identify the ASG easily and also review all of the above set up of the ASG. When the ASG is reviewed, we can go ahead and create our ASG.
+8. The final step is to add any tags to help identify the ASG easily and to name the EC2 instances that are created. Now click 'Next' and review all of the above set up of the ASG. Once reviewed, we can go ahead and create our ASG.
 
     ![Step 6 - ASG Group sizes](images/aws-asg-tags.png)
 
