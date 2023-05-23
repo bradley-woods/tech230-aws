@@ -109,13 +109,13 @@ This guide outlines how to automate all of the previous steps to create a web se
     ```bash
     echo -e "\nexport DB_HOST=mongodb://192.168.10.150:27017/posts" >> ~/.bashrc
 
-    source .bashrc
+    source ~/.bashrc
     ```
 
 8. Next, the required app folder is downloaded from my GitHub repo through cloning it:
 
     ```bash
-    git clone https://github.com/bradley-woods/app.git
+    git clone https://github.com/bradley-woods/app.git ~/app
     ```
 
 9. Now we have the app folder, the script `cd` changes directory inside the app folder and installs it using the following commands:
