@@ -1,6 +1,6 @@
 # AWS EC2 Setup
 
-In this guide, we will be looking at launching our first VM hosted on the cloud using AWS.
+In this guide, we will be looking at launching our first VM hosted on the cloud using AWS EC2 (Elastic Compute Cloud).
 
 ## Launching an EC2 Instance
 
