@@ -37,7 +37,7 @@ Pre-requisites:
 
     ![Step 4 - ASG Group sizes](images/aws-asg-sizes.png)
 
-    Also, we want to set a Scaling policy which tells the ASG when to scale up or down based on different computing parameters, in this case it is when an average of 50% CPU utilisation across instances is reached. 
+    Also, we want to set a Scaling policy which tells the ASG when to scale up or down based on different computing parameters, in this case it is when an average of 50% CPU utilisation across instances is reached.
 
     ![Step 4b - Scaling policy](images/aws-asg-policies)
 
