@@ -1,6 +1,10 @@
-# AWS EC2 Setup
+# AWS EC2 Setup <!-- omit from toc -->
 
-In this guide, we will be looking at launching our first VM hosted on the cloud using AWS EC2 (Elastic Compute Cloud).
+In this guide, we will be looking at launching our first VM hosted on the cloud using AWS EC2 (Elastic Compute Cloud) instances which are cloud-based VMs rented from AWS. The following steps outline what will be covered:
+
+- [Launching an EC2 Instance](#launching-an-ec2-instance)
+- [Connecting via SSH](#connecting-via-ssh)
+- [Setting up an Nginx Web Server on an EC2 Instance](#setting-up-an-nginx-web-server-on-an-ec2-instance)
 
 ## Launching an EC2 Instance
 
@@ -86,7 +90,7 @@ When ready, click 'Connect' to connect to the instance. Now, we can connect to t
 
     If all was successful, you should now be logged in to your first EC2 instance!
 
-## Setting up Nginx Server on AWS EC2
+## Setting up an Nginx Web Server on an EC2 Instance
 
 1. Next, follow the steps outlined previously ([tech230-vagrant-intro](https://github.com/bradley-woods/tech230-vagrant-intro)) to install and run an Nginx web server. In total, the following commands should be entered into the terminal:
 

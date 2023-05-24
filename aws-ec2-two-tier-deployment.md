@@ -1,12 +1,20 @@
-# AWS EC2 Two-Tier Deployment
+# AWS EC2 Two-Tier Deployment <!-- omit from toc -->
 
-In this guide, we will look at deploying our sample web app and database on two AWS EC2 instances, making it publicly available via the public IPv4 address AWS automatically generates.
+In this guide, we will look at deploying our sample web app and database on two AWS EC2 instances, making it publicly available via the public IPv4 address AWS automatically generates. The following key points will be covered throughout this guide:
+
+- [Copying a local file/folder to the EC2 Instance](#copying-a-local-filefolder-to-the-ec2-instance)
+- [Installing the App](#installing-the-app)
+- [Running the App](#running-the-app)
+- [Connecting to the Database Server](#connecting-to-the-database-server)
+  - [Configuring the Database Server](#configuring-the-database-server)
+  - [Configuring the Web Server](#configuring-the-web-server)
+- [Creating an AMI Template of the App and Database Servers](#creating-an-ami-template-of-the-app-and-database-servers)
 
 Pre-requisites:
 
 - Create and deploy an Nginx web server on an EC2 instance as outlined here: [tech230-aws](https://github.com/bradley-woods/tech230-aws/blob/main/aws-ec2-setup.md)
 
-## Copying a Local file/folder to the EC2 Instance
+## Copying a local file/folder to the EC2 Instance
 
 1. Firstly, to copy the app directory from your local machine to the EC2 instance you can either use `rsync` or `scp` commands. We will use the following `scp` command which stands for **Secure Copy**:
 
