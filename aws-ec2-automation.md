@@ -50,7 +50,7 @@ This guide outlines how to automate all of the previous steps to create a web se
 
     > **Note:** the `-i` flag stands for 'in-place' editing which is used to modify the file without the need to save the output of the `sed` command to a temporary file then replacing the original file.
 
-8. Once the 'mongod.conf' configuration file is updated, we need to `restart` and `enable` the MongoDB service as below: 
+8. Once the 'mongod.conf' configuration file is updated, we need to `restart` and `enable` the MongoDB service as below:
 
     ```bash
     sudo systemctl restart mongod && sudo systemctl enable mongod

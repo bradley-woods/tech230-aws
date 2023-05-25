@@ -70,7 +70,7 @@ This guide outlines how to create the VPC shown in the diagram and the necessary
 
     ![AWS VPC Editing routes](images/aws-edit-routes.png)
 
-5. We now want to repeat the steps 1 to 3 for creating the private subnet route table, ensuring we only have one route for the local target and no connection to the IGW as this should remain private. Once the route tables are created, as shown below, we can highlight the public route table and click 'Set main route table'. However, a main route table should automatically be created for you when creating the VPC, so either set a new main or edit the pre-existing one.
+5. Instead of repeating the steps 1 to 3 for creating the private subnet route table, the VPC should have automatically created a 'main route table' by default, this routes all unassociated subnets internally, ensuring we only have one route for the local target and no connection to the IGW so it is suitable for the private subnet, feel free to rename it as below:
 
     ![AWS VPC Route tables](images/aws-route-tables.png)
 
@@ -93,6 +93,3 @@ This guide outlines how to create the VPC shown in the diagram and the necessary
 2. Once created, we can do the same for the web application instance but this time we can set up the 'Network settings' for the public subnet, as shown below, creating a new security group to allow SSH, HTTP and the application port 3000 communication:
 
     ![AWS App instance in VPC](images/aws-create-instance-in-vpc.png)
-
-
-[def]: #aws-vpc
