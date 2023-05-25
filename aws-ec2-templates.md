@@ -1,4 +1,4 @@
-# AWS EC2 User Data, AMIs and Launch Templates
+# AWS EC2 - User Data, AMIs and Launch Templates
 
 The following definitions outline the differences between using User Data, AMIs and Launch Templates to improve efficiency when creating EC2 instances:
 

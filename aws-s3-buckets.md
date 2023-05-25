@@ -1,4 +1,4 @@
-# AWS S3 Buckets
+# AWS S3 - Buckets
 
 In AWS, there is a storage service called S3 (Simple Storage Service). It enables users to store and retrieve numerous amounts of data at any time or place, with the benefit of AWS's security and durability, find out more detail [here](https://www.simplilearn.com/tutorials/aws-tutorial/aws-s3).
 

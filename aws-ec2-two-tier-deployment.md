@@ -1,4 +1,4 @@
-# AWS EC2 Two-Tier Deployment <!-- omit from toc -->
+# AWS EC2 - Two-Tier Architecture Deployment <!-- omit from toc -->
 
 In this guide, we will look at deploying our sample web app and database on two AWS EC2 instances, making it publicly available via the public IPv4 address AWS automatically generates. The following key points will be covered throughout this guide:
 

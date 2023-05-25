@@ -1,4 +1,4 @@
-# AWS VPC <!-- omit in toc -->
+# AWS VPC - Two-Tier Architecture Deployment <!-- omit in toc -->
 
 AWS VPC (Virtual Private Cloud) allows AWS resources to be launched in logically isolated virtual networks which resemble traditional network architecture in a datacentre, with the additional benefits of scalable infrastructure from AWS.
 
@@ -15,6 +15,7 @@ This guide outlines how to create the VPC shown in the diagram and the necessary
 - [Creating the Route Tables](#creating-the-route-tables)
 - [Checking the VPC](#checking-the-vpc)
 - [Creating EC2 Instances in the VPC](#creating-ec2-instances-in-the-vpc)
+- [Checking the Two-Tier Architecture](#checking-the-two-tier-architecture)
 
 ## Creating the VPC
 
@@ -93,3 +94,21 @@ This guide outlines how to create the VPC shown in the diagram and the necessary
 2. Once created, we can do the same for the web application instance but this time we can set up the 'Network settings' for the public subnet, as shown below, creating a new security group to allow SSH, HTTP and the application port 3000 communication:
 
     ![AWS App instance in VPC](images/aws-create-instance-in-vpc.png)
+
+    > **Note:** if you set up Nginx as a reverse proxy you do not need port 3000. Also, use the Private IP of the newly created DB instance (e.g. 10.0.3.221) as the 'DB_HOST' environment variable either when manually setting up or through User data.
+
+## Checking the Two-Tier Architecture
+
+1. We can check the two-tier architecture has been successfully set up by going to the instance summary pages. For the webapp instance, we can see that it is indeed in the VPC and public subnet we created and has a private IPv4 address within the CIDR block range of 10.0.2.0. Also, at this point we can make a note of the public IPv4 address so we can enter it in our browser later.
+
+    ![App instance summary](images/aws-app-instance-summary.png)
+
+2. In a similar way, we can check the database instance, we can see that is in the same VPC but it is in the separate private subnet with a private IPv4 address within the CIDR block range of 10.0.3.0.
+
+    ![DB instance summary](images/aws-db-instance-summary.png)
+
+3. Finally, to check the app and database are functional, we can enter the webapp public IPv4 address into a browser address bar (removing the 's' from 'https') and check the app works. Then add '/posts' to the end of the address to check the database has been successfully connected.
+
+    ![App working](images/aws-vpc-app-running.png)
+
+    ![Database connected](images/aws-vpc-posts-running.png)

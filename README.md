@@ -2,19 +2,19 @@
 
 ## Contents of Repository
 
-   1. [AWS EC2 Setup](https://github.com/bradley-woods/tech230-aws/blob/main/aws-ec2-setup.md)
+   1. [AWS EC2 - Instance Setup](https://github.com/bradley-woods/tech230-aws/blob/main/aws-ec2-setup.md)
 
-   2. [AWS EC2 User Data, AMIs and Launch Templates](https://github.com/bradley-woods/tech230-aws/blob/main/aws-ec2-templates.md)
+   2. [AWS EC2 - User Data, AMIs and Launch Templates](https://github.com/bradley-woods/tech230-aws/blob/main/aws-ec2-templates.md)
 
-   3. [AWS EC2 Two-Tier Deployment](https://github.com/bradley-woods/tech230-aws/blob/main/aws-ec2-two-tier-deployment.md)
+   3. [AWS EC2 - Two-Tier Architecture Deployment](https://github.com/bradley-woods/tech230-aws/blob/main/aws-ec2-two-tier-deployment.md)
 
-   4. [AWS EC2 App Deployment Automation](https://github.com/bradley-woods/tech230-aws/blob/main/aws-ec2-automation.md)
+   4. [AWS EC2 - App Deployment Automation](https://github.com/bradley-woods/tech230-aws/blob/main/aws-ec2-automation.md)
 
-   5. [AWS EC2 Auto Scaling Groups](https://github.com/bradley-woods/tech230-aws/blob/main/aws-ec2-auto-scaling-groups.md)
+   5. [AWS EC2 - Auto Scaling Groups](https://github.com/bradley-woods/tech230-aws/blob/main/aws-ec2-auto-scaling-groups.md)
 
-   6. [AWS S3 Buckets](https://github.com/bradley-woods/tech230-aws/blob/main/aws-s3-buckets.md)
+   6. [AWS S3 - Buckets](https://github.com/bradley-woods/tech230-aws/blob/main/aws-s3-buckets.md)
 
-   7. [AWS VPC](https://github.com/bradley-woods/tech230-aws/blob/main/aws-vpc.md)
+   7. [AWS VPC - Two-Tier Architecture Deployment](https://github.com/bradley-woods/tech230-aws/blob/main/aws-vpc.md)
 
 ## What is Cloud Computing?
 

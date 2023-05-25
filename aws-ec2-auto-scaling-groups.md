@@ -1,4 +1,4 @@
-# AWS EC2 Auto Scaling Groups
+# AWS EC2 - Auto Scaling Groups
 
 An Auto Scaling Group (ASG) is a group of EC2 instances that are automatically scaled and managed based on a scaling policy, e.g. CPU percentage utilisation. Depending on the minimum and maximum instances you set, the ASG can automatically start up or terminate instances based on the number of requests/ traffic received by the Load Balancer which distributes the requests to each instance. Then, if the CPU percentage goes over the set threshold, the ASG will automatically generate a new EC2 instance.
 

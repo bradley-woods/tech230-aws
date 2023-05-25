@@ -1,4 +1,4 @@
-# AWS EC2 Setup <!-- omit from toc -->
+# AWS EC2 - Instance Setup <!-- omit from toc -->
 
 In this guide, we will be looking at launching our first VM hosted on the cloud using AWS EC2 (Elastic Compute Cloud) instances which are cloud-based VMs rented from AWS. The following steps outline what will be covered:
 
