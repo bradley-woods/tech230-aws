@@ -81,6 +81,9 @@ pm2 restart app.js --update-env
 # TROUBLESHOOTING (CHEATSHEET - https://devhints.io/pm2)
 # ======================================================
 
+# Check the log of user data script commands
+cat /var/log/cloud-init-output.log
+
 # Kill all node processes (app.js)
 sudo killall node
 
