@@ -14,7 +14,7 @@
 
    6. [AWS S3 - Buckets](https://github.com/bradley-woods/tech230-aws/blob/main/aws-s3-buckets.md)
 
-   7. [AWS VPC - Two-Tier Architecture Deployment](https://github.com/bradley-woods/tech230-aws/blob/main/aws-vpc.md)
+   7. [AWS VPC - Two-Tier Architecture Deployment](https://github.com/bradley-woods/tech230-aws/blob/main/aws-vpc-two-tier-deployment.md)
 
    8. [AWS CloudWatch](https://github.com/bradley-woods/tech230-aws/blob/main/aws-cloudwatch.md)
 

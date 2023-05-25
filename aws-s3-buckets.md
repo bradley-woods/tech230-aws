@@ -1,4 +1,4 @@
-# AWS S3 - Buckets
+# AWS S3 - Buckets <!-- omit in toc -->
 
 In AWS, there is a storage service called S3 (Simple Storage Service). It enables users to store and retrieve numerous amounts of data at any time or place, with the benefit of AWS's security and durability, find out more detail [here](https://www.simplilearn.com/tutorials/aws-tutorial/aws-s3).
 
@@ -6,7 +6,13 @@ Similar to how we have interacted with EC2, you can use the AWS console which is
 
 ![AWS S3](images/aws_s3.png)
 
----
+This guide outlines how to setup and use the AWS CLI and AWS SDK for Python (Boto3) on an EC2 instance to perform CRUD operations on S3, following these steps:
+
+- [Installing AWS CLI on an EC2 Instance](#installing-aws-cli-on-an-ec2-instance)
+- [Performing CRUD Operations in S3 using AWS CLI](#performing-crud-operations-in-s3-using-aws-cli)
+- [Installing AWS SDK for Python (Boto3) on an EC2 Instance](#installing-aws-sdk-for-python-boto3-on-an-ec2-instance)
+- [Automating CRUD Operations in S3 using Python](#automating-crud-operations-in-s3-using-python)
+
 
 ## Installing AWS CLI on an EC2 Instance
 
