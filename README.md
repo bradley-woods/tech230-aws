@@ -16,6 +16,8 @@
 
    7. [AWS VPC - Two-Tier Architecture Deployment](https://github.com/bradley-woods/tech230-aws/blob/main/aws-vpc.md)
 
+   8. [AWS CloudWatch](https://github.com/bradley-woods/tech230-aws/blob/main/aws-cloudwatch.md)
+
 ## What is Cloud Computing?
 
 Cloud computing began all the way back in the 1960s where multiple users would simultaneously access a mainframe computer. This idea quickly gained traction and developments were made such as grid computing, utility computing and virtualisation; however, the main idealogy stayed the same.

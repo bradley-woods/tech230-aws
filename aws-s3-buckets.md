@@ -8,9 +8,31 @@ Similar to how we have interacted with EC2, you can use the AWS console which is
 
 ---
 
+## Installing AWS CLI on an EC2 Instance
+
+1. Firstly, we need to install the AWS CLI with the required dependencies on the EC2 instance, using the following commands:
+
+    ```bash
+    $ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
+    $ sudo apt install unzip
+
+    $ unzip awscliv2.zip
+
+    $ sudo ./aws/install
+    ```
+
+2.  We can check the AWS CLI version using:
+
+    ```bash
+    $ /usr/local/bin/aws --version
+    ```
+
+    ![CLI version](images/aws-ec2-cli.png)
+
 ## Performing CRUD Operations in S3 using AWS CLI
 
-- Firstly, to install the AWS CLI, you can open up a terminal window or use an IDE (Integrated Developer Environment) and run the following command using the Python installation package manager `pip`:
+- To install the AWS CLI other than on an EC2 instance you can open up a terminal window or use an IDE (Integrated Developer Environment) and run the following command using the Python installation package manager `pip`:
 
     ```bash
     pip install awscli
@@ -28,6 +50,8 @@ Similar to how we have interacted with EC2, you can use the AWS console which is
     aws s3 ls
     ```
 
+    ![CLI list](images/aws-ec2-cli-list.png)
+
 Create Operation (**C**-R-U-D)
 
 - To make a new bucket, use the following command. In the example, the bucket is called 'tech230-bradley-bucket' in region 'eu-west-1' (Ireland):
@@ -35,6 +59,10 @@ Create Operation (**C**-R-U-D)
     ```bash
     aws s3 mb s3://tech230-bradley-bucket --region eu-west-1
     ```
+
+    ![CLI Create](images/aws-ec2-cli-mb.png)
+
+    ![CLI List new bucket](images/aws-cli-list-my-bucket.png)
 
 Read and Update Operations (C-**R**-**U**-D)
 
@@ -44,11 +72,15 @@ Read and Update Operations (C-**R**-**U**-D)
     aws s3 cp <file-name>  s3://tech230-bradley-bucket
     ```
 
+    ![CLI Copy](images/aws-ec2-cli-cp.png)
+
 - To download the contents of a bucket to a new local folder, in this case called 's3_downloads', use the command below:
 
     ```bash
     aws s3 sync s3://tech230-bradley-bucket s3_downloads
     ```
+
+    ![CLI Download](images/aws-ec2-cli-sync.png)
 
 Delete Operation (C-R-U-**D**)
 
@@ -57,6 +89,8 @@ Delete Operation (C-R-U-**D**)
     ```bash
     aws s3 rm s3://tech230-bradley-bucket/sampletext.txt
     ```
+
+    ![CLI Delete file from bucket](images/aws-ec2-cli-rm.png)
 
 - To remove the entire contents of a bucket using `--recursive`, use the command:
 
@@ -70,19 +104,51 @@ Delete Operation (C-R-U-**D**)
     aws s3 rb s3://tech230-bradley-bucket
     ```
 
+    ![CLI Delete bucket](images/aws-ec2-cli-rmb.png)
+
 ---
+
+## Installing AWS SDK for Python (Boto3) on an EC2 Instance
+
+1. Firstly, install the required packages for Python and set up and activate the virtual environment using the following commands:
+
+    ```bash
+    $ sudo apt install python3.8-venv
+
+    $ python3 -m venv <env-directory>
+
+    $ source ~/<env-directory>/bin/activate
+    ```
+
+    > **Note:** Python should already be installed previously: If it is not installed, use the following command `sudo apt install python3`.
+
+    ![Boto3 Venv](images/aws-cli-env.png)
+
+2. Next, inside our virtual environment, we can install the required packages for Python Boto3, using the following commands:
+
+    ```bash
+    $ sudo apt-get install python3-pip
+
+    $ pip install boto3    
+    ```
+
+3. Next, we can run the Python interpreter using the following command:
+
+    ```bash
+    $ python3
+    ```
 
 ## Automating CRUD Operations in S3 using Python
 
-We can automate the above tasks using Boto3 which is the AWS SDK for Python.
+We can automate the above tasks in the CLI using Boto3 which is the AWS SDK for Python.
 
-- Firstly, let's install Boto3 using the below Python installation package manager `pip` command:
+- If Python is already installed we can just install Boto3 using the below Python installation package manager `pip` command:
 
     ```console
     pip install boto3
     ```
 
-- We can check the list of buckets similar to previously using the following Python script, which connects to the S3 resource bucket and loops through each bucket and prints the bucket name:
+- We can check the list of buckets similar to previously using the following Python commands, which connects to the S3 resource bucket and loops through each bucket and prints the bucket name:
 
     ```python
     import boto3
@@ -94,6 +160,8 @@ We can automate the above tasks using Boto3 which is the AWS SDK for Python.
     for bucket in s3.buckets.all():
         print(bucket.name)
     ```
+
+    ![Boto3 list buckets](images/aws-cli-boto3.png)
 
 Create Operation (**C**-R-U-D)
 
