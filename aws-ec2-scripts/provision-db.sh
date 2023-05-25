@@ -15,8 +15,8 @@ sudo apt-get update -y && sudo apt-get upgrade -y
 # Install MongoDB
 sudo apt-get install -y mongodb-org=3.2.20 mongodb-org-server=3.2.20 mongodb-org-shell=3.2.20 mongodb-org-mongos=3.2.20 mongodb-org-tools=3.2.20
 
-# Edit /etc/mongod.conf file to change bindIp to 0.0.0.0
-sudo sed -i "s/127.0.0.1/0.0.0.0/" /etc/mongod.conf
+# Edit /etc/mongod.conf file to change bindIp to app private IP
+sudo sed -i "s/127.0.0.1/{{app-private-ip}}/" /etc/mongod.conf
 
 # Restart then enable MongoDB
 sudo systemctl restart mongod && sudo systemctl enable mongod

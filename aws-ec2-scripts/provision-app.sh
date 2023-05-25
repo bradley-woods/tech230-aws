@@ -23,13 +23,13 @@ sudo apt-get install nodejs -y
 sudo npm install pm2 -g
 
 # Add database host IP as a global environment variable
-export DB_HOST=mongodb://192.168.10.150:27017/posts
+export DB_HOST=mongodb://{{private-ip}}:27017/posts
 
 # Get repo with app folder
-git clone https://github.com/bradley-woods/app.git ~/app
+git clone https://github.com/bradley-woods/app.git /home/ubuntu/app
 
 # Install the app
-cd ~/app
+cd /home/ubuntu/app
 
 sudo npm install
 
@@ -76,3 +76,22 @@ node seeds/seed.js
 pm2 start app.js --update-env
 
 pm2 restart app.js --update-env
+
+# ======================================================
+# TROUBLESHOOTING (CHEATSHEET - https://devhints.io/pm2)
+# ======================================================
+
+# Kill all node processes (app.js)
+sudo killall node
+
+# Stop all processes
+sudo pm2 stop all 
+
+# Delete all processes
+sudo pm2 delete all
+
+# Sync current pm2 processes
+sudo pm2 save --force
+
+# Kill pm2 process itself
+pkill pm2
