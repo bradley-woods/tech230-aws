@@ -40,3 +40,10 @@ sudo apt-get install -y mongodb-org=3.2.20 mongodb-org-server=3.2.20 mongodb-org
 sudo sed -i "s/127.0.0.1/0.0.0.0/" /etc/mongod.conf
 
 sudo systemctl restart mongod && sudo systemctl enable mongod
+
+# =============
+# COMMUNITY AMI
+# =============
+
+# ami-0a7493ba2bc35c1e9
+# ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-20230424

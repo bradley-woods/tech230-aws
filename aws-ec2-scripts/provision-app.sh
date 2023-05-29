@@ -53,8 +53,6 @@ sudo apt-get install nginx -y
 
 sudo sed -i "s/try_files \$uri \$uri\/ =404;/proxy_pass http:\/\/localhost:3000\/;/" /etc/nginx/sites-available/default
 
-sudo sed -i "s/# pass PHP scripts to FastCGI server/location \/posts {\n\t\tproxy_pass http:\/\/localhost:3000\/posts;\n\t}/" /etc/nginx/sites-available/default
-
 sudo systemctl restart nginx && sudo systemctl enable nginx
 
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -

@@ -13,7 +13,6 @@ This guide outlines how to setup and use the AWS CLI and AWS SDK for Python (Bot
 - [Installing AWS SDK for Python (Boto3) on an EC2 Instance](#installing-aws-sdk-for-python-boto3-on-an-ec2-instance)
 - [Automating CRUD Operations in S3 using Python](#automating-crud-operations-in-s3-using-python)
 
-
 ## Installing AWS CLI on an EC2 Instance
 
 1. Firstly, we need to install the AWS CLI with the required dependencies on the EC2 instance, using the following commands:
@@ -28,7 +27,7 @@ This guide outlines how to setup and use the AWS CLI and AWS SDK for Python (Bot
     $ sudo ./aws/install
     ```
 
-2.  We can check the AWS CLI version using:
+2. We can check the AWS CLI version using:
 
     ```bash
     $ /usr/local/bin/aws --version
